@@ -1,5 +1,7 @@
 -- File: 01_create_initial_schema.sql
 
+CREATE EXTENSION IF NOT EXISTS "pgcrypto" WITH SCHEMA "extensions";
+
 CREATE TABLE public.posts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   notion_page_id TEXT UNIQUE,
